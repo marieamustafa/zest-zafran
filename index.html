@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zest & Zafran | Modern Culinary Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .menu-gradient {
+            background: linear-gradient(to bottom, #ffffff, #f9fafb);
+        }
+        .nav-blur {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    </style>
+</head>
+<body class="text-slate-900 bg-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 nav-blur border-b border-slate-100">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="text-2xl font-bold tracking-tighter serif text-amber-700">ZEST & ZAFRAN</div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest text-slate-600">
+                <a href="#home" class="hover:text-amber-700 transition-colors">Home</a>
+                <a href="#menu" class="hover:text-amber-700 transition-colors">Menu</a>
+                <a href="#about" class="hover:text-amber-700 transition-colors">About</a>
+                <a href="#contact" class="hover:text-amber-700 transition-colors">Contact</a>
+            </div>
+            <a href="#contact" class="bg-amber-700 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-amber-800 transition-all">
+                Reserve
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-black/40 z-10"></div>
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&q=80&w=2000" 
+                 alt="Restaurant Interior" 
+                 class="w-full h-full object-cover"
+                 onerror="this.src='https://images.unsplash.com/photo-1550966842-2862ba996747?auto=format&fit=crop&q=80&w=2000'">
+        </div>
+        
+        <div class="relative z-20 text-center px-4">
+            <span class="text-white uppercase tracking-[0.3em] text-sm mb-4 block">Flavor • Spice • Soul</span>
+            <h1 class="text-5xl md:text-8xl text-white mb-6">Zest & Zafran.</h1>
+            <p class="text-white/90 text-lg md:text-xl max-w-xl mx-auto mb-10 font-light italic">
+                A vibrant fusion of citrus zest and aromatic saffron, redefining the modern dining experience.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#menu" class="bg-white text-slate-900 px-10 py-4 rounded-sm font-semibold hover:bg-amber-50 transition-all">View Menu</a>
+                <a href="#about" class="border border-white text-white px-10 py-4 rounded-sm font-semibold hover:bg-white/10 transition-all">Our Story</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-24 menu-gradient">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl mb-4">Our Menu</h2>
+                <div class="w-20 h-1 bg-amber-700 mx-auto"></div>
+                <p class="mt-6 text-slate-500 max-w-lg mx-auto">Bold spices and fresh ingredients brought together with culinary precision.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-x-16 gap-y-12">
+                <!-- Starters -->
+                <div>
+                    <h3 class="text-2xl mb-8 text-amber-700 border-b pb-2">Small Plates</h3>
+                    
+                    <div class="group mb-8">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-lg font-semibold group-hover:text-amber-700 transition-colors">Saffron Arancini</h4>
+                            <span class="text-slate-400 font-light">$18</span>
+                        </div>
+                        <p class="text-sm text-slate-500 italic">Zafran infused rice, wild mushrooms, parmesan foam</p>
+                    </div>
+
+                    <div class="group mb-8">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-lg font-semibold group-hover:text-amber-700 transition-colors">Citrus Burrata</h4>
+                            <span class="text-slate-400 font-light">$22</span>
+                        </div>
+                        <p class="text-sm text-slate-500 italic">Lemon zest emulsion, heirloom tomatoes, sourdough crisps</p>
+                    </div>
+
+                    <div class="group mb-8">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-lg font-semibold group-hover:text-amber-700 transition-colors">Spiced Scallops</h4>
+                            <span class="text-slate-400 font-light">$24</span>
+                        </div>
+                        <p class="text-sm text-slate-500 italic">Turmeric purée, crispy pancetta, lime herb butter</p>
+                    </div>
+                </div>
+
+                <!-- Mains -->
+                <div>
+                    <h3 class="text-2xl mb-8 text-amber-700 border-b pb-2">Main Course</h3>
+                    
+                    <div class="group mb-8">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-lg font-semibold group-hover:text-amber-700 transition-colors">Saffron Sea Bass</h4>
+                            <span class="text-slate-400 font-light">$42</span>
+                        </div>
+                        <p class="text-sm text-slate-500 italic">Braised fennel, zafran broth, citrus micro-greens</p>
+                    </div>
+
+                    <div class="group mb-8">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-lg font-semibold group-hover:text-amber-700 transition-colors">Zesty Wagyu Fillet</h4>
+                            <span class="text-slate-400 font-light">$58</span>
+                        </div>
+                        <p class="text-sm text-slate-500 italic">Orange-marrow butter, fondant potato, red wine jus</p>
+                    </div>
+
+                    <div class="group mb-8">
+                        <div class="flex justify-between items-baseline mb-1">
+                            <h4 class="text-lg font-semibold group-hover:text-amber-700 transition-colors">Zafran Risotto</h4>
+                            <span class="text-slate-400 font-light">$36</span>
+                        </div>
+                        <p class="text-sm text-slate-500 italic">Aged carnaroli, purest saffron, pine nuts, chives</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Image -->
+            <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=800" class="rounded shadow-lg h-64 w-full object-cover" alt="Dish 1">
+                <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&q=80&w=800" class="rounded shadow-lg h-64 w-full object-cover" alt="Dish 2">
+                <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&q=80&w=800" class="rounded shadow-lg h-64 w-full object-cover" alt="Dish 3">
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Quote -->
+    <section id="about" class="py-24 bg-slate-900 text-white text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <span class="text-amber-500 text-4xl mb-6 block serif">"</span>
+            <p class="text-2xl md:text-3xl font-light italic leading-relaxed mb-8">
+                At Zest & Zafran, we believe every dish should tell a story of aromatic spices and refreshing vitality.
+            </p>
+            <h5 class="uppercase tracking-widest text-sm text-amber-500">— Chef Julian Vane</h5>
+        </div>
+    </section>
+
+    <!-- Contact / Reservation -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h2 class="text-4xl mb-6">Find Us</h2>
+                <p class="text-slate-600 mb-8">Join us for an unforgettable meal. Reservations at Zest & Zafran are highly recommended.</p>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <span class="font-bold w-24 text-amber-700">Address</span>
+                        <span class="text-slate-600">123 Culinary Way, Soho<br>New York, NY 10012</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="font-bold w-24 text-amber-700">Hours</span>
+                        <span class="text-slate-600">Tue – Sun: 5:00 PM – 11:00 PM<br>Closed Mondays</span>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="font-bold w-24 text-amber-700">Contact</span>
+                        <span class="text-slate-600">+1 (555) 0123-4567<br>hello@zestzafran.com</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-slate-50 p-10 rounded-lg shadow-sm border border-slate-100">
+                <h3 class="text-2xl mb-6 serif">Book a Table</h3>
+                <form id="reservationForm" class="space-y-4">
+                    <input type="text" placeholder="Full Name" class="w-full p-3 border border-slate-200 rounded focus:outline-none focus:border-amber-700">
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="date" class="w-full p-3 border border-slate-200 rounded focus:outline-none focus:border-amber-700">
+                        <input type="time" class="w-full p-3 border border-slate-200 rounded focus:outline-none focus:border-amber-700">
+                    </div>
+                    <select class="w-full p-3 border border-slate-200 rounded focus:outline-none focus:border-amber-700 bg-white">
+                        <option>2 Guests</option>
+                        <option>3 Guests</option>
+                        <option>4 Guests</option>
+                        <option>5+ Guests</option>
+                    </select>
+                    <button type="button" onclick="handleSubmit()" class="w-full bg-amber-700 text-white py-4 rounded font-bold hover:bg-amber-800 transition-colors uppercase tracking-widest text-xs">
+                        Check Availability
+                    </button>
+                    <p id="msg" class="text-center text-sm font-medium mt-2 hidden"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-100 text-center">
+        <div class="text-xl font-bold tracking-tighter serif text-amber-700 mb-4">ZEST & ZAFRAN</div>
+        <p class="text-xs text-slate-400 uppercase tracking-widest">© 2024 Zest & Zafran Group. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function handleSubmit() {
+            const btn = document.querySelector('#reservationForm button');
+            const msg = document.getElementById('msg');
+            
+            btn.innerHTML = 'Checking...';
+            btn.disabled = true;
+            
+            // Artificial delay
+            setTimeout(() => {
+                btn.innerHTML = 'Check Availability';
+                btn.disabled = false;
+                msg.textContent = "Please call Zest & Zafran for tonight's availability.";
+                msg.classList.remove('hidden');
+                msg.classList.add('text-amber-700');
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
