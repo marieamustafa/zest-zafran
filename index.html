@@ -41,8 +41,8 @@
                 <a href="#menu" class="hover:text-amber-700 transition-colors">Menu</a>
                 <a href="#interest" class="hover:text-amber-700 transition-colors">Updates</a>
             </div>
-            <a href="#interest" class="bg-amber-700 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-amber-800 transition-all">
-                Reserve
+            <a href="#interest" class="bg-amber-700 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-amber-800 transition-all shadow-sm">
+                Join VIP
             </a>
         </div>
     </nav>
@@ -150,9 +150,9 @@
 
     <script>
         /**
-         * SETUP: Paste your Google Web App URL (from the 'Deploy' step) below.
+         * PRODUCTION URL CONFIGURED
          */
-        const GOOGLE_SCRIPT_URL = 'PASTE_YOUR_GOOGLE_WEB_APP_URL_HERE';
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyQqISDvmgQIHV_xzI2kiIRIyRyUFrWW8qM4OROQUEzNspeieO0pkubHjRbZQPMeddE/exec';
 
         function showToast(message, isError = false) {
             const toast = document.getElementById('toast');
@@ -182,12 +182,6 @@
             const selectedInterests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
                 .map(cb => cb.value);
 
-            // Corrected logic check: Ensure the user has actually replaced the placeholder text
-            if (GOOGLE_SCRIPT_URL.includes('PASTE_YOUR_GOOGLE')) {
-                showToast("System not configured. Admin needs to add Script URL.", true);
-                return;
-            }
-
             btn.innerHTML = '<span class="inline-block animate-pulse">Processing...</span>';
             btn.disabled = true;
 
@@ -205,10 +199,11 @@
                     })
                 });
 
+                // Since no-cors doesn't allow reading response, we assume success if no error is thrown
                 showToast(`Thank you, ${nameInput.value.split(' ')[0]}! You're on the list.`);
                 document.getElementById('interestForm').reset();
             } catch (error) {
-                console.error('Error:', error);
+                console.error('Submission Error:', error);
                 showToast("Something went wrong. Please try again.", true);
             } finally {
                 btn.innerHTML = 'Register My Interest';
