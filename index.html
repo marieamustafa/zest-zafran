@@ -88,13 +88,6 @@
                         </div>
                         <p class="text-sm text-slate-500 italic">Zafran infused rice, wild mushrooms, parmesan foam</p>
                     </div>
-                    <div class="group mb-8">
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h4 class="text-lg font-semibold">Citrus Burrata</h4>
-                            <span class="text-slate-400">$22</span>
-                        </div>
-                        <p class="text-sm text-slate-500 italic">Lemon zest emulsion, heirloom tomatoes, sourdough crisps</p>
-                    </div>
                 </div>
 
                 <div>
@@ -106,13 +99,6 @@
                         </div>
                         <p class="text-sm text-slate-500 italic">Braised fennel, zafran broth, citrus micro-greens</p>
                     </div>
-                    <div class="group mb-8">
-                        <div class="flex justify-between items-baseline mb-1">
-                            <h4 class="text-lg font-semibold">Zesty Wagyu Fillet</h4>
-                            <span class="text-slate-400">$58</span>
-                        </div>
-                        <p class="text-sm text-slate-500 italic">Orange-marrow butter, fondant potato, red wine jus</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -123,7 +109,7 @@
         <div class="max-w-4xl mx-auto px-6">
             <div class="bg-white p-10 md:p-16 rounded-2xl shadow-xl border border-amber-100 text-center">
                 <h2 class="text-3xl md:text-4xl mb-4 serif">Join Our Community</h2>
-                <p class="text-slate-600 mb-10 max-w-lg mx-auto">Register your interest to receive exclusive invitations to our grand opening, seasonal tastings, and special events.</p>
+                <p class="text-slate-600 mb-10 max-w-lg mx-auto">Register your interest to receive exclusive invitations to our grand opening and special events.</p>
                 
                 <form id="interestForm" onsubmit="handleInterestSubmit(event)" class="space-y-4 max-w-md mx-auto">
                     <div class="flex flex-col md:flex-row gap-4">
@@ -134,51 +120,15 @@
                         <p class="text-xs text-slate-400 font-medium uppercase tracking-widest mb-3">I am interested in:</p>
                         <div class="flex flex-wrap gap-4">
                             <label class="flex items-center space-x-2 text-sm text-slate-600 cursor-pointer">
-                                <input type="checkbox" class="accent-amber-700"> <span>Grand Opening</span>
+                                <input type="checkbox" name="interest" value="Grand Opening" class="accent-amber-700"> <span>Grand Opening</span>
                             </label>
                             <label class="flex items-center space-x-2 text-sm text-slate-600 cursor-pointer">
-                                <input type="checkbox" class="accent-amber-700"> <span>Tasting Menus</span>
-                            </label>
-                            <label class="flex items-center space-x-2 text-sm text-slate-600 cursor-pointer">
-                                <input type="checkbox" class="accent-amber-700"> <span>Private Events</span>
+                                <input type="checkbox" name="interest" value="Tasting Menus" class="accent-amber-700"> <span>Tasting Menus</span>
                             </label>
                         </div>
                     </div>
-                    <button type="submit" id="interestBtn" class="w-full bg-slate-900 text-white py-4 rounded-lg font-bold hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl active:scale-[0.98]">
+                    <button type="submit" id="interestBtn" class="w-full bg-slate-900 text-white py-4 rounded-lg font-bold hover:bg-slate-800 transition-all shadow-lg active:scale-[0.98]">
                         Register My Interest
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact / Reservation -->
-    <section id="contact" class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl mb-6">Find Us</h2>
-                <div class="space-y-4">
-                    <div class="flex items-start">
-                        <span class="font-bold w-24 text-amber-700">Address</span>
-                        <span class="text-slate-600">123 Culinary Way, Soho<br>New York, NY 10012</span>
-                    </div>
-                    <div class="flex items-start">
-                        <span class="font-bold w-24 text-amber-700">Contact</span>
-                        <span class="text-slate-600">+1 (555) 0123-4567<br>hello@zestzafran.com</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="bg-slate-50 p-10 rounded-lg shadow-sm border border-slate-100">
-                <h3 class="text-2xl mb-6 serif text-center">Book a Table</h3>
-                <form onsubmit="event.preventDefault(); showToast('Reservation system offline for demo.');" class="space-y-4">
-                    <input type="text" placeholder="Full Name" class="w-full p-3 border border-slate-200 rounded focus:outline-none focus:border-amber-700">
-                    <div class="grid grid-cols-2 gap-4">
-                        <input type="date" class="w-full p-3 border border-slate-200 rounded">
-                        <input type="time" class="w-full p-3 border border-slate-200 rounded">
-                    </div>
-                    <button type="submit" class="w-full bg-amber-700 text-white py-4 rounded font-bold hover:bg-amber-800 transition-colors">
-                        Check Availability
                     </button>
                 </form>
             </div>
@@ -187,7 +137,7 @@
 
     <!-- Success Toast Notification -->
     <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-[100] transition-all duration-500 opacity-0 translate-y-10">
-        <div class="bg-slate-900 text-white px-8 py-4 rounded-full shadow-2xl flex items-center space-x-3">
+        <div id="toastContent" class="bg-slate-900 text-white px-8 py-4 rounded-full shadow-2xl flex items-center space-x-3">
             <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
             <span id="toastMsg" class="text-sm font-medium tracking-wide">Success!</span>
         </div>
@@ -200,10 +150,20 @@
     </footer>
 
     <script>
-        function showToast(message) {
+        /**
+         * SETUP: Paste your Google Web App URL (from the 'Deploy' step) below.
+         */
+        const GOOGLE_SCRIPT_URL = 'PASTE_YOUR_GOOGLE_WEB_APP_URL_HERE';
+
+        function showToast(message, isError = false) {
             const toast = document.getElementById('toast');
+            const toastContent = document.getElementById('toastContent');
             const toastMsg = document.getElementById('toastMsg');
+            
             toastMsg.textContent = message;
+            toastContent.className = isError 
+                ? 'bg-red-600 text-white px-8 py-4 rounded-full shadow-2xl flex items-center space-x-3' 
+                : 'bg-slate-900 text-white px-8 py-4 rounded-full shadow-2xl flex items-center space-x-3';
             
             toast.classList.remove('opacity-0', 'translate-y-10');
             toast.classList.add('opacity-100', 'translate-y-0');
@@ -214,24 +174,48 @@
             }, 4000);
         }
 
-        function handleInterestSubmit(e) {
+        async function handleInterestSubmit(e) {
             e.preventDefault();
-            const btn = document.getElementById('interestBtn');
-            const name = document.getElementById('regName').value;
             
+            const btn = document.getElementById('interestBtn');
+            const nameInput = document.getElementById('regName');
+            const emailInput = document.getElementById('regEmail');
+            const selectedInterests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
+                .map(cb => cb.value);
+
+            // Verify the URL has been updated
+            if (GOOGLE_SCRIPT_URL.includes('https://marieamustafa.github.io/zest-zafran')) {
+                showToast("URL not configured. Please add your Google Script URL to line 133.", true);
+                return;
+            }
+
             btn.innerHTML = '<span class="inline-block animate-pulse">Processing...</span>';
             btn.disabled = true;
 
-            // Simulating API call
-            setTimeout(() => {
-                showToast(`Thank you, ${name.split(' ')[0]}! You're on the list.`);
-                btn.innerHTML = 'Registered Successfully';
+            try {
+                // Fetch sends data to the Google Apps Script
+                // Note: 'no-cors' mode is used because Google Scripts don't return standard CORS headers
+                await fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', 
+                    cache: 'no-cache',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: nameInput.value,
+                        email: emailInput.value,
+                        interests: selectedInterests
+                    })
+                });
+
+                showToast(`Thank you, ${nameInput.value.split(' ')[0]}! You're on the list.`);
                 document.getElementById('interestForm').reset();
-                setTimeout(() => {
-                    btn.innerHTML = 'Register My Interest';
-                    btn.disabled = false;
-                }, 2000);
-            }, 1500);
+            } catch (error) {
+                console.error('Error:', error);
+                showToast("Something went wrong. Please try again.", true);
+            } finally {
+                btn.innerHTML = 'Register My Interest';
+                btn.disabled = false;
+            }
         }
     </script>
 </body>
