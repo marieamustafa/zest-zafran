@@ -40,9 +40,8 @@
                 <a href="#home" class="hover:text-amber-700 transition-colors">Home</a>
                 <a href="#menu" class="hover:text-amber-700 transition-colors">Menu</a>
                 <a href="#interest" class="hover:text-amber-700 transition-colors">Updates</a>
-                <a href="#contact" class="hover:text-amber-700 transition-colors">Contact</a>
             </div>
-            <a href="#contact" class="bg-amber-700 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-amber-800 transition-all">
+            <a href="#interest" class="bg-amber-700 text-white px-6 py-2 rounded-full text-sm font-semibold hover:bg-amber-800 transition-all">
                 Reserve
             </a>
         </div>
@@ -130,7 +129,7 @@
                     <button type="submit" id="interestBtn" class="w-full bg-slate-900 text-white py-4 rounded-lg font-bold hover:bg-slate-800 transition-all shadow-lg active:scale-[0.98]">
                         Register My Interest
                     </button>
-                </form> https://script.google.com/macros/s/AKfycbyQqISDvmgQIHV_xzI2kiIRIyRyUFrWW8qM4OROQUEzNspeieO0pkubHjRbZQPMeddE/exec
+                </form>
             </div>
         </div>
     </section>
@@ -183,9 +182,9 @@
             const selectedInterests = Array.from(document.querySelectorAll('input[name="interest"]:checked'))
                 .map(cb => cb.value);
 
-            // Verify the URL has been updated
-            if (GOOGLE_SCRIPT_URL.includes('https://script.google.com/macros/s/AKfycbyQqISDvmgQIHV_xzI2kiIRIyRyUFrWW8qM4OROQUEzNspeieO0pkubHjRbZQPMeddE/exec')) {
-                showToast("URL not configured. Please add your Google Script URL to line 133.", true);
+            // Corrected logic check: Ensure the user has actually replaced the placeholder text
+            if (GOOGLE_SCRIPT_URL.includes('PASTE_YOUR_GOOGLE')) {
+                showToast("System not configured. Admin needs to add Script URL.", true);
                 return;
             }
 
@@ -193,8 +192,7 @@
             btn.disabled = true;
 
             try {
-                // Fetch sends data to the Google Apps Script
-                // Note: 'no-cors' mode is used because Google Scripts don't return standard CORS headers
+                // Post data to Google Apps Script
                 await fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors', 
