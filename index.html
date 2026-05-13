@@ -150,9 +150,9 @@
 
     <script>
         /**
-         * PRODUCTION URL CONFIGURED
+         * UPDATED GOOGLE SCRIPT URL
          */
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyQqISDvmgQIHV_xzI2kiIRIyRyUFrWW8qM4OROQUEzNspeieO0pkubHjRbZQPMeddE/exec';
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxhM5n9qHIkOozJvj3oOcFUYrOa6NzKwO4FFBxJ91QcBGCCVGxIKQqKmRkdR1LVkAeY/exec';
 
         function showToast(message, isError = false) {
             const toast = document.getElementById('toast');
@@ -199,7 +199,6 @@
                     })
                 });
 
-                // Since no-cors doesn't allow reading response, we assume success if no error is thrown
                 showToast(`Thank you, ${nameInput.value.split(' ')[0]}! You're on the list.`);
                 document.getElementById('interestForm').reset();
             } catch (error) {
